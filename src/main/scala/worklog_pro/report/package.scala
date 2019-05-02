@@ -59,8 +59,8 @@ package object report {
         d = start.plusDays(dayShift)
       } yield {
         reported.get(d) match {
-          case Some(reportedHours) => DayReport(d, requiredHours, reportedHours)
-          case None => DayReport(d, requiredHours, 0.0)
+          case Some(reportedHours) => DayReport(d, reportedHours, requiredHours)
+          case None => DayReport(d, 0.0, requiredHours)
         }
 
       }
